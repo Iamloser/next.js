@@ -253,7 +253,7 @@ function createRouteLoader(assetPrefix: string): RouteLoader {
 
     styleSheets.set(
       href,
-      (prom = fetch(href)
+      (prom = fetch(href, {mode: "no-cors"})
         .then((res) => {
           if (!res.ok) {
             throw new Error(`Failed to load stylesheet: ${href}`)
